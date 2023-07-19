@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz Challenge</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <header>
-        <button id="hsPage"> View High Scores</button>
-        <p id="countdown"></p>
-    </header>
-
-
-    <div class="container">
-        <h1 class="title">Coding Quiz Challenge</h1>
-        <p id="main"></p>
-    </div>
-
+    <body>
+        <div class="wrapper">
+        <header>
+            <button id="hsPage" class="btn"> View High Scores</button>
+            <p id="countdown" class="time">Time: 80</p>
+        </header>
+          <div class="card">
+            <div class="card-header">
+                <h1 class="title">Coding Quiz Challenge</h1>
+                <button id="start" class="btn">Start</button>
+            </div>
+        
+            <div id="start" class="response_box">
+                <h2 id="questionText">Test</h2>
+                 <div class="answer_choice">
+                    <button id="option_1" class="option_button">Option 1</button>
+                    <button id="option_2" class="option_button">Option 2</button>
+                    <button id="option_3" class="option_button">Option 3</button>
+                    <button id="option_4" class="option_button">Option 4</button>
+                </div>
+            </div>
+            <div class="card-footer">
+              <button id="submit" class="btn">Submit</button>
+              <p id="isCorrect"></p>
+            </div>
+          </div>
+        </div>
+      </body>  
     
     <script src="./assets/js/script.js"></script>
 
@@ -27,8 +44,8 @@
 <!-- 
   To Do
   -----
-  1. Start Quiz Button
-  2. Timer
+  1. Start Quiz Button DONE
+  2. Timer DONE
   3. 4 Choice Questions
   4. Timer needs to be reduced on a wrong Answer
   5. High Score Page
