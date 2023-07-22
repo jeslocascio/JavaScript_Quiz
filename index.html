@@ -7,36 +7,47 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <body>
-        <div class="wrapper">
-        <header>
-            <button id="hsPage" class="btn"> View High Scores</button>
-            <p id="countdown" class="time">Time: 80</p>
-        </header>
-          <div class="card">
-            <div class="card-header">
-                <h1 class="title">Coding Quiz Challenge</h1>
-                <button id="start" class="btn">Start</button>
-            </div>
-        
-            <div id="start" class="response_box">
-                <h2 id="questionText">Test</h2>
-                 <div class="answer_choice">
-                    <button id="option_1" class="option_button">Option 1</button>
-                    <button id="option_2" class="option_button">Option 2</button>
-                    <button id="option_3" class="option_button">Option 3</button>
-                    <button id="option_4" class="option_button">Option 4</button>
-                </div>
-            </div>
-            <div class="card-footer">
-              <button id="submit" class="btn">Submit</button>
-              <p id="isCorrect"></p>
-            </div>
-          </div>
+    <div class="wrapper">
+    <header>
+        <button id="hsPage" class="btn"> View High Scores</button>
+        <p id="countdown" class="time">Time: 80</p>
+    </header>
+    <div class="card">
+        <div class="card-header">
+            <h1 class="title">Coding Quiz Challenge</h1>
+            <button id="start" class="btn">Start</button>
         </div>
-      </body>  
     
-    <script src="./assets/js/script.js"></script>
+        <div class="quiz">
+            <h2 id="question">Test</h2>
+            <div id="answer-buttons">
+                <button id="answer_choice" class="btn_answer">Option 1</button>
+                <button id="answer_choice" class="btn_answer">Option 2</button>
+                <button id="answer_choice" class="btn_answer">Option 3</button>
+                <button id="answer_choice" class="btn_answer">Option 4</button>
+            </div>
+        </div>
+        <div class="card-footer">
+            <p id="theChoice"></p>
+        </div>
+
+        <!-- <div id="start" class="response_box">
+            <h2 id="questionText">Test</h2>
+                <div class="answer_choice">
+                <button id="option_1" class="option_button">Option 1</button>
+                <button id="option_2" class="option_button">Option 2</button>
+                <button id="option_3" class="option_button">Option 3</button>
+                <button id="option_4" class="option_button">Option 4</button>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button id="submit" class="btn">Submit</button>
+            <p id="isCorrect"></p>
+        </div>
+        </div> -->
+    </div>
+
+<script src="./assets/js/script.js"></script>
 
 </body>
 </html>
