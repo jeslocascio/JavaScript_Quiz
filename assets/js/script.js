@@ -19,6 +19,7 @@ var currentQuestionIndex = 0;
 var score = timeLeft;
 var testing = document.getElementById("theChoice");
 
+
 function countdown() {
   var timeInterval = setInterval(function () {
     if (timeLeft > 0) {
@@ -57,19 +58,19 @@ var questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
     answers: [
-      {text: '<script>', correct: true},
-      {text: '<link>', correct: false},
-      {text: '<div>', correct: false},
-      {text: '<header>', correct: false},
+      {text: 'script', correct: true},
+      {text: 'link', correct: false},
+      {text: 'div', correct: false},
+      {text: 'header', correct: false},
     ]
   },
  {
     question: "Where do you link the JavaScript in the HTML file?",
     answers: [
-      {text: '<head>', correct: false},
-      {text: '<div>', correct: false},
-      {text: '<body>', correct: true},
-      {text: '<header>', correct: false},
+      {text: 'head', correct: false},
+      {text: 'div', correct: false},
+      {text: 'body', correct: true},
+      {text: 'header', correct: false},
     ]
   },
   {
@@ -84,25 +85,29 @@ var questions = [
 ]
 
 function showQuestion(){
+  console.log("Show Question");
   resetState();
   var currentQuestion = questions[currentQuestionIndex];
   var questionNo = currentQuestionIndex + 1;
   questionEl.innerHTML = questionNo + "." + currentQuestion.question;
 
   currentQuestion.answers.forEach(answer => {
-    var button = document.createElement("button");
+    const button = document.createElement("button");
     button.innerHTML = answer.text;
     button.setAttribute("id", "answer_choice")
     button.classList.add("btn_answer");
     answerEl.appendChild(button);
     if(answer.correct){
+      button.dataset.correct = answer.correct;
       testing.style="display:block";
     }
     button.addEventListener("click", selectAnswer);
+    console.log(answer.text);
   });
 }
 
 function resetState(){
+  console.log("Reset State")
   start.style.display = "none";
   while (answerEl.firstChild){
     answerEl.removeChild(answerEl.firstChild);
@@ -110,6 +115,7 @@ function resetState(){
 };
 
 function selectAnswer(e){
+  console.log("Select Answer");
   var selectedBtn = e.target;
   var isCorrect = selectedBtn.dataset.correct === "true";
   if(isCorrect){
@@ -126,13 +132,14 @@ function selectAnswer(e){
     if(button.dataset.correct === true){
       button.classList.add("correct");
     }
-    button.disabled = true;
+  
    
   })
 }
 
 function nextQuestion() {
-  if(currentQuestionIndex < questions.length){
+  console.log("Next Question")
+  if(currentQuestionIndex < questions.length - 1){
     currentQuestionIndex++;
     showQuestion();
   } else {
@@ -142,6 +149,12 @@ function nextQuestion() {
 
 function submitScore() {
   console.log("You did it!");
+ sessionStorage.setItem("score", timeLeft);
+ sessionStorage.getItem("score");
+ console.log(sessionStorage.getItem("score"));
+ questionEl.style="display:none";
+ answerEl.style="display:none";
+ timeLeft = 0;
 }
 
 
