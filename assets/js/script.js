@@ -1,11 +1,17 @@
+// Variables for countdown and timer
 var timerEl = document.getElementById('countdown');
-var start = document.getElementById('start');
 var timeLeft = 80;
+
+// Variables for running and quiz, and its elements
+var start = document.getElementById('start');
 var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answer-buttons");
 var currentQuestionIndex = 0;
-var score = timeLeft;
 var testing = document.getElementById("theChoice");
+var restart = document.getElementById("restart");
+
+// Variables dealing with the score page
+var score = timeLeft;
 var submission = document.getElementById("submit-area");
 var submitButton = document.getElementById("sendInitials");
 var userInitials = document.getElementById("userName");
@@ -13,12 +19,12 @@ var scoreList = document.getElementById("highScore");
 var scorePage = document.getElementById("hsPage");
 var initialText = document.getElementById("syi");
 var theScoreboard = document.getElementById("scoreboard");
-var restart = document.getElementById("restart");
 var done = document.getElementById("youDidIt");
 
-
+// Hides the score page when you open the website
 scorePage.style="display:none";
 
+// Function to handle the countdown timer
 function countdown() {
   var timeInterval = setInterval(function () {
     if (timeLeft > 0) {
@@ -35,6 +41,7 @@ function countdown() {
   }, 1000);
 }
 
+// Determines what happens after clicking "Start"
 start.addEventListener('click', function() {
   if(start) {
     timeLeft = 80;
@@ -48,6 +55,7 @@ start.addEventListener('click', function() {
   }
 })
 
+// Function for showing you the question and choice options for the quiz
 function showQuestion() {
   console.log("Show Question");
   resetState();
@@ -61,6 +69,7 @@ function showQuestion() {
     button.setAttribute("id", "answer_choice")
     button.classList.add("btn_answer");
     answerEl.appendChild(button);
+    // An if statement that sets the correct answer
     if (answer.correct) {
       button.dataset.correct = answer.correct;
       testing.style = "display:block";
@@ -70,6 +79,7 @@ function showQuestion() {
   });
 }
 
+// Function to reset the state of the page every time you hit "Start"
 function resetState(){
   console.log("Reset State")
   start.style.display = "none";
@@ -80,6 +90,7 @@ function resetState(){
   } 
 };
 
+// Function to how you if you selected a correct or incorrect answer
 function selectAnswer(e){
   console.log("Select Answer");
   var selectedBtn = e.target;
@@ -91,6 +102,7 @@ function selectAnswer(e){
   } else {
     selectedBtn.classList.add("incorrect");
     testing.textContent = "Incorrect";
+    // If you are wrong, it takes 10 seconds off the timer
     timeLeft = timeLeft - 10;
     nextQuestion();
   }
@@ -103,6 +115,7 @@ function selectAnswer(e){
   })
 }
 
+// Function to take you to the next question, or the submission page.
 function nextQuestion() {
   console.log("Next Question")
   if(currentQuestionIndex < questions.length - 1){
@@ -113,6 +126,7 @@ function nextQuestion() {
   }
 }
 
+// Function to end the quiz and, tells you the score, and lets you submit your results
 function submitScore() {
   console.log("You did it!");
  localStorage.setItem("score", timeLeft);
@@ -127,6 +141,7 @@ localStorage.getItem("score");
  currentQuestionIndex = 0; 
 }
 
+// Determines what happens after you click the "Submit" button
 submitButton.addEventListener('click', function() {
   RecordScores();
   done.classList.remove("hide");
@@ -137,6 +152,7 @@ submitButton.addEventListener('click', function() {
   scorePage.style="display:block";
 })
 
+// Function to record your submitted score. Adds "NA" if you leave the submission box blank
 function RecordScores() {
   theUser = userInitials.value.trim().toUpperCase();
   if (theUser === "") {
@@ -153,6 +169,7 @@ function RecordScores() {
   localStorage.setItem("highScores", highScoreList);
 }
 
+//Function to display a list of all submitted scores
 function ShowScores() {
   theScoreboard.classList.remove("hide");
   scoreList.innerHTML = "";
@@ -169,6 +186,7 @@ function ShowScores() {
   }
 }
 
+// Determines that the "scorePage" button takes you to the View High Scores page
 scorePage.addEventListener('click',function() {
   done.classList.add("hide");
   ShowScores();
@@ -176,11 +194,12 @@ scorePage.addEventListener('click',function() {
   restart.classList.remove("hide");
 })
 
+// Makes it so the "Restart" button will reload the page so you can take the quiz again
 restart.addEventListener('click', function() {
   location.reload();
 })
 
-
+//The list of questions and answers used in the quiz, along with if they are correct or incorrect
 var questions = [
   {
     question: "What does the DOM stand for?",

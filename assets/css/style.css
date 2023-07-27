@@ -1,17 +1,24 @@
+/* Define root variables for commonly used values */
 :root {
   --codingFont: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  --blueColor: #315083;
+  --grayColor: #e7e9eb;
+  --buttonMargin: 16px 16px 16px 20px;
+  --fontandline: 22px;
 }
 
-
+/* Sets the font and background color of whole page */
 body {
   font-family: var(--codingFont);
   background-color: #f9fbfd;
 }
 
+/*Sets the padding on the page wrapper*/
 .wrapper {
   padding: 10px;
 }
 
+/* Sets the style of the header */
 header {
   display: flex;
   justify-content: space-between;
@@ -21,6 +28,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Sets the style for card elements */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -32,9 +40,13 @@ header {
   max-width: 800px;
   padding: 30px 40px;
 }
+
+/* Center aligns text in the card header */
 .card-header {
   text-align: center;
 }
+
+/* Sets a horizontal line after the card header */
 .card-header::after {
   content: " ";
   display: block;
@@ -43,14 +55,17 @@ header {
   height: 2px;
 }
 
+/* Styles for the main content area of the card */
 .card-body {
   min-height: 100px;
 }
 
+/* Centers the text in the card footer */
 .card-footer {
   text-align: center;
 }
 
+/* Sets a horizontal line before the card footer*/
 .card-footer::before {
   content: " ";
   display: block;
@@ -59,51 +74,56 @@ header {
   height: 2px;
 }
 
+/* Clear floating elements after card footer */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* Sets style for buttons */
 .btn {
   border: none;
-  background-color: #315083;
+  background-color: var(--blueColor);
   border-radius: 25px;
   box-shadow: black 0px 1px 6px 0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
-  font-size: 22px;
+  font-size: var(--fontandline);
   font-family: var(--codingFont);
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  line-height: var(--fontandline);
+  margin: var(--buttonMargin);
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
 }
 
+/* Sets style for the time element */
 .time {
   border: none;
   border-radius: 25px;
-  color: #315083;
+  color: var(--blueColor);
   display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  font-size: var(--fontandline);
+  line-height: var(--fontandline);
+  margin: var(--buttonMargin);
   padding: 14px 34px;
   text-align: center;
 }
 
+/* Disable cursor for disabled buttons */
 button[disabled] {
   cursor: default;
- 
 }
 
-.quiz{
+/* Sets display, font, and border, for the quiz container */
+.quiz {
   border-radius: 10px;
   font-family: var(--codingFont);
   display: block;
 }
 
+/* Sets style for answer choices */
 #answer_choice {
   display: flex;
   flex-wrap: wrap;
@@ -112,27 +132,24 @@ button[disabled] {
   background-color: #88edb1;
   border: none;
   border-radius: 25px;
-  box-shadow: black ;
+  box-shadow: black;
   color: #4f77d3;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  font-size: var(--fontandline);
+  line-height: var(--fontandline);
+  margin: var(--buttonMargin);
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
- 
 }
 
-.correct {
-  font-size: 100px;
-}
-
+/* Sets style for the score submission section */
 .score-submit {
   text-align: center;
   margin: 10px 0;
-  font-size: 22px;
+  font-size: var(--fontandline);
 }
 
+/* Sets style for text indicating "Correct" or "Incorrect" answers */
 #theChoice {
   display: none;
   font-family: var(--codingFont);
@@ -140,23 +157,23 @@ button[disabled] {
   color: lightgrey;
 }
 
-
+/* A utility class that makes items hidden*/
 .hide {
   display: none;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
-    margin: 16px 16px 16px 20px;
+    margin: var(--buttonMargin);
     padding: 10px 15px;
   }
-
 }
 
+/* Media query for even smaller screens */
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
   }
 }
-
