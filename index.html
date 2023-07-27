@@ -9,42 +9,37 @@
 <body>
     <div class="wrapper">
     <header>
-        <button id="hsPage" class="btn"> View High Scores</button>
         <p id="countdown" class="time">Time: 80</p>
+        <button id="hsPage" class="btn"> View High Scores</button>
     </header>
     <div class="card">
         <div class="card-header">
             <h1 class="title">Coding Quiz Challenge</h1>
             <button id="start" class="btn">Start</button>
+            <button id="restart" class="btn hide">Restart</button>
         </div>
     
         <div class="quiz" id="the_quiz">
-            <h2 id="question">Test</h2>
-            <div id="answer-buttons">
+            <h2 id="question" class="hide">Test</h2>
+            <div id="answer-buttons" class="hide">
                 <button id="answer_choice" class="btn_answer">Option 1</button>
                 <button id="answer_choice" class="btn_answer">Option 2</button>
                 <button id="answer_choice" class="btn_answer">Option 3</button>
                 <button id="answer_choice" class="btn_answer">Option 4</button>
             </div>
+            <h3 id="scoreboard" class="hide">Coding Quiz Scoreboard</h3>
+            <p id="highScore"></p>
+            <p id="youDidIt" class="hide"></p>
+            <div class="score-submit hide" id="submit-area">
+                <label for="userName" id="syi">Submit your Initials:</label>
+                <input type="text" name="name" id="userName">
+                <br>
+                <button id="sendInitials" class="btn">Submit Score</button>
+            </div>
         </div>
         <div class="card-footer">
             <p id="theChoice"></p>
         </div>
-
-        <!-- <div id="start" class="response_box">
-            <h2 id="questionText">Test</h2>
-                <div class="answer_choice">
-                <button id="option_1" class="option_button">Option 1</button>
-                <button id="option_2" class="option_button">Option 2</button>
-                <button id="option_3" class="option_button">Option 3</button>
-                <button id="option_4" class="option_button">Option 4</button>
-            </div>
-        </div>
-        <div class="card-footer">
-            <button id="submit" class="btn">Submit</button>
-            <p id="isCorrect"></p>
-        </div>
-        </div> -->
     </div>
 
 <script src="./assets/js/script.js"></script>
@@ -57,11 +52,11 @@
   -----
   1. Start Quiz Button DONE
   2. Timer DONE
-  3. 4 Choice Questions
-  4. Timer needs to be reduced on a wrong Answer
-  5. High Score Page
+  3. 4 Choice Questions DONE
+  4. Timer needs to be reduced on a wrong Answer DONE
+  5. High Score Page DONE
   6. Store score at end of quiz using Initials
-  7. Quiz ends after all questions are answered OR if Timer reaches 0
-  8. Pages tells you if answer is right or wrong
+  7. Quiz ends after all questions are answered OR if Timer reaches 0 DONE
+  8. Pages tells you if answer is right or wrong DONE
   9. HS Page will have time saved after initials
 -->

@@ -1,6 +1,10 @@
+:root {
+  --codingFont: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 
 body {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: var(--codingFont);
   background-color: #f9fbfd;
 }
 
@@ -69,7 +73,7 @@ header {
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: var(--codingFont);
   line-height: 22px;
   margin: 16px 16px 16px 20px;
   padding: 14px 34px;
@@ -96,7 +100,7 @@ button[disabled] {
 
 .quiz{
   border-radius: 10px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: var(--codingFont);
   display: block;
 }
 
@@ -123,49 +127,19 @@ button[disabled] {
   font-size: 100px;
 }
 
+.score-submit {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 22px;
+}
+
 #theChoice {
   display: none;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: var(--codingFont);
   font-size: 18px;
   color: lightgrey;
 }
 
-/* .response_box {
-  border-radius: 5px;
-  border-width: 1px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
-}
-
-.option_button {
-  margin: 20px 15%;
-  background-color: #88edb1;
-  border: none;
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px ;
-  color: #4f77d3;
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
-  text-align: center;
-  cursor: pointer;
-}
-
-#submit {
-  display: none;
-}
-
-#isCorrect {
-  color: hsl(206, 17%, 28%);
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 15px;
-  text-align: center;
-} */
 
 .hide {
   display: none;
@@ -174,7 +148,7 @@ button[disabled] {
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
-    margin: 16px 0px 0px 0px;
+    margin: 16px 16px 16px 20px;
     padding: 10px 15px;
   }
 
